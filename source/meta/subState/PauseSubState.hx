@@ -14,6 +14,7 @@ import flixel.util.FlxColor;
 import meta.MusicBeat.MusicBeatSubState;
 import meta.data.font.Alphabet;
 import meta.state.*;
+import meta.state.charting.*;
 import meta.state.menus.*;
 import sys.thread.Mutex;
 import sys.thread.Thread;
@@ -22,7 +23,7 @@ class PauseSubState extends MusicBeatSubState
 {
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
-	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Exit to menu'];
+	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Chart Editor', 'Exit to menu'];
 	var curSelected:Int = 0;
 
 	var pauseMusic:FlxSound;
@@ -126,6 +127,8 @@ class PauseSubState extends MusicBeatSubState
 					close();
 				case "Restart Song":
 					Main.switchState(this, new PlayState());
+				case "Chart Editor":
+					Main.switchState(this, new ChartingState());
 				case "Exit to menu":
 					PlayState.resetMusic();
 					PlayState.deaths = 0;

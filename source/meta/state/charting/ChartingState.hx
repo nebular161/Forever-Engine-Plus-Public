@@ -488,28 +488,23 @@ class ChartingState extends MusicBeatState
 			{
 				//prevNote = note;
 				var constSize = Std.int(gridSize / 3);
-
 				var sustainVis:Note = new Note(daStrumTime + (Conductor.stepCrochet * daSus) + Conductor.stepCrochet, daNoteInfo % 4, daNoteAlt, prevNote, true);
 				sustainVis.setGraphicSize(constSize,
 					Math.floor(FlxMath.remapToRange((daSus / 2) - constSize, 0, Conductor.stepCrochet * verticalSize, 0, gridSize * verticalSize)));
 				sustainVis.updateHitbox();
 				sustainVis.x = note.x + constSize;
 				sustainVis.y = note.y + (gridSize / 2);
-
 				var sustainEnd:Note = new Note(daStrumTime + (Conductor.stepCrochet * daSus) + Conductor.stepCrochet, daNoteInfo % 4, daNoteAlt, sustainVis, true);
 				sustainEnd.setGraphicSize(constSize, constSize);
 				sustainEnd.updateHitbox();
 				sustainEnd.x = sustainVis.x;
 				sustainEnd.y = note.y + (sustainVis.height) + (gridSize / 2);
-
 				// loll for later
 				sustainVis.rawNoteData = daNoteInfo;
 				sustainEnd.rawNoteData = daNoteInfo;
-
 				curRenderedSustains.add(sustainVis);
 				curRenderedSustains.add(sustainEnd);
 				//
-
 				// set the note at the current note map
 				curNoteMap.set(note, [sustainVis, sustainEnd]);
 			}
