@@ -1,20 +1,14 @@
 <p align="center">
   <img src="https://media.discordapp.net/attachments/916918345255751690/930068118938730526/legacy.png" width="750"/></a>
-  <h1 align="center">Forever Engine Legacy</h1>
-  <h2 align="center">An open-source, quality of life and performance driven Friday Night Funkin' mod engine!</h2>
+  <h1 align="center">Forever Engine Plus</h1>
+  <h2 align="center">An open-source modified version of Forever Engine: Legacy!</h2>
 </p>
 
 ----------------------------------------------
-## Please redirect all future and current enhancements to the [new repository](https://github.com/Yoshubs/FNF-Forever-Engine).
-----------------------------------------------
-Forever Engine is currently in *legacy* state as it is being rewritten. 
-
-The legacy version of Forever Engine lacks accessibility and cohesion, something we are currently working to fix with the more newer and updated rewrite.
-
-**FOREVER ENGINE LEGACY IS ONLY MEANT TO BE USED ON DESKTOP! I AM NOT RESPONSIBLE FOR CRASHES/PROBLEMS WITH HTML5, NOR AM I RESPONSIBLE FOR MAINTAINING HTML5.**
+Forever Engine: Plus is a fun little project of a modified version of Forever Engine: Legacy by Yoshubs! It's meant to add cool new shit to the engine.
 
 ----------------------------------------------
-# Features:
+# Features in the original Forever Engine:
 * Noteskins;
 * Custom UIs;
 * Options Menu with FPS Capping and Adjustments;
@@ -29,8 +23,13 @@ AND MORE!
 
 ----------------------------------------------
 # Credits:
-* [Yoshubs](https://github.com/Yoshubs) (me!):
-    * made the engine,
+* [NebulaZone](https://github.com/NebulaZone1):
+    * creator of forever engine plus
+    * lead programmer
+    * jackshit at everything
+
+* [Yoshubs](https://github.com/Yoshubs):
+    * made forever engine,
     * happens to be very fucking stupid for accidentally pushing the martian mixtape source code into legacy's base github page;
 * [Pixloen](https://github.com/PixlJacket):
     * made a lot of custom assets that legacy uses,
