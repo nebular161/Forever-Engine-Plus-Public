@@ -130,9 +130,9 @@ class MainMenuState extends MusicBeatState
 
 		// from the base game lol
 
-		var versionShit:FlxText = new FlxText(10, FlxG.height - 18, 0, "Forever Engine Plus v" + Main.gameVersion, 12);
+		var versionShit:FlxText = new FlxText(10, FlxG.height - 40, 0, "Forever Engine Plus v" + Main.gameVersion, 12);
 		versionShit.scrollFactor.set();
-		var versionShit2:FlxText = new FlxText(5, FlxG.height - 18, 0, "Forever Engine By: Yoshubs", 12);
+		var versionShit2:FlxText = new FlxText(10, FlxG.height - 18, 0, "Forever Engine By: Yoshubs", 12);
 		versionShit2.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		versionShit2.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
