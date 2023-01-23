@@ -283,7 +283,7 @@ class Init extends FlxState
 		// lemme fix that for you
 		if (!Std.isOfType(trueSettings.get("Framerate Cap"), Int)
 			|| trueSettings.get("Framerate Cap") < 30
-			|| trueSettings.get("Framerate Cap") > 360)
+			|| trueSettings.get("Framerate Cap") > 460)
 			trueSettings.set("Framerate Cap", 30);
 
 		if (!Std.isOfType(trueSettings.get("Stage Opacity"), Int)
@@ -295,6 +295,7 @@ class Init extends FlxState
 		gameSettings.get("UI Skin")[4] = CoolUtil.returnAssetsLibrary('UI');
 		if (!gameSettings.get("UI Skin")[4].contains(trueSettings.get("UI Skin")))
 			trueSettings.set("UI Skin", 'default');
+		
 		gameSettings.get("Note Skin")[4] = CoolUtil.returnAssetsLibrary('noteskins/notes');
 		if (!gameSettings.get("Note Skin")[4].contains(trueSettings.get("Note Skin")))
 			trueSettings.set("Note Skin", 'default');

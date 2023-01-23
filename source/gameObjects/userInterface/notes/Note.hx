@@ -139,6 +139,7 @@ class Note extends FNFSprite
 				newNote.antialiasing = false;
 				newNote.setGraphicSize(Std.int(newNote.width * PlayState.daPixelZoom));
 				newNote.updateHitbox();
+				
 			default: // base game arrows for no reason whatsoever
 				newNote.frames = Paths.getSparrowAtlas(ForeverTools.returnSkinAsset('NOTE_assets', assetModifier, Init.trueSettings.get("Note Skin"),
 					'noteskins/notes'));
