@@ -21,6 +21,9 @@ Forever Engine: Plus is a fun little project of a modified version of Forever En
 
 AND MORE!
 
+# Features in Forever Engine: Plus:
+* More Noteskins;
+
 ----------------------------------------------
 # Credits:
 * [NebulaZone](https://github.com/NebulaZone1):
