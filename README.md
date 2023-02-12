@@ -23,6 +23,7 @@ AND MORE!
 
 # Features in Forever Engine: Plus (This section is not done yet):
 * More Noteskins;
+* Higher framerate;
 
 ----------------------------------------------
 # Credits:
