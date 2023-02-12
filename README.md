@@ -5,7 +5,7 @@
 </p>
 
 ----------------------------------------------
-Forever Engine: Plus is a fun little project of a modified version of Forever Engine: Legacy by Yoshubs! It's meant to add cool new shit to the engine.
+Forever Engine: Plus is a fun little project of a modified version of Forever Engine: Legacy (a FNF engine) by Yoshubs!
 
 ----------------------------------------------
 # Features in the original Forever Engine:
