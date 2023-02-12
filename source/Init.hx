@@ -283,7 +283,7 @@ class Init extends FlxState
 		// lemme fix that for you
 		if (!Std.isOfType(trueSettings.get("Framerate Cap"), Int)
 			|| trueSettings.get("Framerate Cap") < 30
-			|| trueSettings.get("Framerate Cap") > 360)
+			|| trueSettings.get("Framerate Cap") > 460)
 			trueSettings.set("Framerate Cap", 30);
 
 		if (!Std.isOfType(trueSettings.get("Stage Opacity"), Int)

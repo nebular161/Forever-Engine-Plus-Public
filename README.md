@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://media.discordapp.net/attachments/916918345255751690/930068118938730526/legacy.png" width="750"/></a>
+  <img src="logo.png" width="750"/></a>
   <h1 align="center">Forever Engine Plus</h1>
   <h2 align="center">An open-source modified version of Forever Engine: Legacy!</h2>
 </p>
@@ -21,7 +21,7 @@ Forever Engine: Plus is a fun little project of a modified version of Forever En
 
 AND MORE!
 
-# Features in Forever Engine: Plus:
+# Features in Forever Engine: Plus (This section is not done yet):
 * More Noteskins;
 
 ----------------------------------------------
