@@ -38,7 +38,7 @@ class PauseSubState extends MusicBeatSubState
 		Thread.create(function()
 		{
 			mutex.acquire();
-			pauseMusic = new FlxSound().loadEmbedded(Paths.music('breakfast'), true, true);
+			pauseMusic = new FlxSound().loadEmbedded(Paths.music('menus/breakfast'), true, true);
 			pauseMusic.play(false, FlxG.random.int(0, Std.int(pauseMusic.length / 2)));
 			FlxG.sound.list.add(pauseMusic);
 			pauseMusic.volume = 0;
@@ -65,7 +65,7 @@ class PauseSubState extends MusicBeatSubState
 		add(levelDifficulty);
 
 		var levelDeaths:FlxText = new FlxText(20, 15 + 64, 0, "", 32);
-		levelDeaths.text += "Blue balled: " + PlayState.deaths;
+		levelDeaths.text += "Blueballed: " + PlayState.deaths;
 		levelDeaths.scrollFactor.set();
 		levelDeaths.setFormat(Paths.font('vcr.ttf'), 32);
 		levelDeaths.updateHitbox();

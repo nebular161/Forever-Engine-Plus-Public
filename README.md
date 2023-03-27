@@ -27,7 +27,7 @@ AND MORE!
 
 ----------------------------------------------
 # Credits:
-* [NebulaZone](https://github.com/NebulaZone1):
+* [violet292](https://github.com/violet292):
     * creator of forever engine plus
     * lead programmer
     * jackshit at everything

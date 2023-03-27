@@ -926,7 +926,7 @@ class PlayState extends MusicBeatState
 		// reset bf's animation
 		var holdControls:Array<Bool> = [controls.LEFT, controls.DOWN, controls.UP, controls.RIGHT];
 		if ((boyfriend != null && boyfriend.animation != null)
-			&& (boyfriend.holdTimer > Conductor.stepCrochet * (10 / 1000) && (!holdControls.contains(true) || boyfriendStrums.autoplay)))
+			&& (boyfriend.holdTimer > Conductor.stepCrochet * (1/100) && (!holdControls.contains(true) || boyfriendStrums.autoplay)))
 		{
 			if (boyfriend.animation.curAnim.name.startsWith('sing') && !boyfriend.animation.curAnim.name.endsWith('miss'))
 				boyfriend.dance();
@@ -1237,7 +1237,7 @@ class PlayState extends MusicBeatState
 			// create the note splash if you hit a sick
 			createSplash(coolNote, strumline);
 		else
-			// if it isn't a sick, and you had a sick combo, then it becomes not sick :(
+			// if it isn't a sick, then it becomes not sick :(
 			if (allSicks)
 				allSicks = false;
 
