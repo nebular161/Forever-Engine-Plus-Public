@@ -281,14 +281,14 @@ class Paths
 	inline static public function voices(song:String):Any
 	{
 		var songKey:String = '${CoolUtil.swapSpaceDash(song.toLowerCase())}/Voices';
-		var voices = returnSound('songs', songKey);
+		var voices = returnSound('music/songs', songKey);
 		return voices;
 	}
 
 	inline static public function inst(song:String):Any
 	{
 		var songKey:String = '${CoolUtil.swapSpaceDash(song.toLowerCase())}/Inst';
-		var inst = returnSound('songs', songKey);
+		var inst = returnSound('music/songs', songKey);
 		return inst;
 	}
 
@@ -302,6 +302,11 @@ class Paths
 	{
 		return 'assets/fonts/$key';
 	}
+
+	inline static public function charts(key:String, isSong = false, ?library:String):String
+	{
+		return getPath('${isSong ? "" : "music/songs"}/$key.json', TEXT, library);
+	}	
 
 	inline static public function getSparrowAtlas(key:String, ?library:String)
 	{

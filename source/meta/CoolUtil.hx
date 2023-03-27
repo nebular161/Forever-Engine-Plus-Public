@@ -14,6 +14,27 @@ class CoolUtil
 	public static var difficultyArray:Array<String> = ['EASY', "NORMAL", "HARD"];
 	public static var difficultyLength = difficultyArray.length;
 
+	public static var difficultyArrayExport:Array<String> = ['-easy', "", "-hard"];
+
+	public static function difficultyString():String
+	{
+		return difficultyArray[PlayState.storyDifficulty];
+	}
+
+	public static function formatSong(diff:Int):String
+	{
+		var coolDiff:String = difficultyArray[diff];
+
+		var formatedSong:String = coolDiff;
+
+		return formatedSong;
+	}
+
+	public static function difficultyExport():String
+	{
+		return difficultyArrayExport[PlayState.storyDifficulty];
+	}
+
 	public static function difficultyFromNumber(number:Int):String
 	{
 		return difficultyArray[number];

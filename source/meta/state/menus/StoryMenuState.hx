@@ -22,6 +22,7 @@ class StoryMenuState extends MusicBeatState
 {
 	var scoreText:FlxText;
 	var curDifficulty:Int = 1;
+	var curDifficultyArray = ["Easy", "Normal", "Hard"];
 
 	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true];
 
@@ -273,12 +274,10 @@ class StoryMenuState extends MusicBeatState
 			PlayState.isStoryMode = true;
 			selectedWeek = true;
 
-			var diffic:String = '-' + CoolUtil.difficultyFromNumber(curDifficulty).toLowerCase();
-			diffic = diffic.replace('-normal', '');
-
 			PlayState.storyDifficulty = curDifficulty;
+			var formatSong = CoolUtil.formatSong(PlayState.storyDifficulty);
 
-			PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
+			PlayState.SONG = Song.loadFromJson(formatSong, PlayState.storyPlaylist[0].toLowerCase());
 			PlayState.storyWeek = curWeek;
 			PlayState.campaignScore = 0;
 			new FlxTimer().start(1, function(tmr:FlxTimer)

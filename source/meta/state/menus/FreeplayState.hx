@@ -70,7 +70,7 @@ class FreeplayState extends MusicBeatState
 			control over what you can display about the song (color, icon, etc) since it will be pregenerated for you instead.
 		**/
 		// load in all songs that exist in folder
-		var folderSongs:Array<String> = CoolUtil.returnAssetsLibrary('songs', 'assets');
+		var folderSongs:Array<String> = CoolUtil.returnAssetsLibrary('music/songs', 'assets');
 
 		///*
 		for (i in 0...Main.gameWeeks.length)
@@ -87,7 +87,7 @@ class FreeplayState extends MusicBeatState
 			if (!existingSongs.contains(i.toLowerCase()))
 			{
 				var icon:String = 'gf';
-				var chartExists:Bool = FileSystem.exists(Paths.songJson(i, i));
+				var chartExists:Bool = FileSystem.exists(Paths.charts(i, i));
 				if (chartExists)
 				{
 					var castSong:SwagSong = Song.loadFromJson(i, i);
@@ -162,8 +162,8 @@ class FreeplayState extends MusicBeatState
 		///*
 		var coolDifficultyArray = [];
 		for (i in CoolUtil.difficultyArray)
-			if (FileSystem.exists(Paths.songJson(songName, songName + '-' + i))
-				|| (FileSystem.exists(Paths.songJson(songName, songName)) && i == "NORMAL"))
+			if (FileSystem.exists(Paths.charts(songName, songName + '-' + i))
+				|| (FileSystem.exists(Paths.charts(songName, songName)) && i == "NORMAL"))
 				coolDifficultyArray.push(i);
 
 		if (coolDifficultyArray.length > 0)
@@ -226,15 +226,13 @@ class FreeplayState extends MusicBeatState
 
 		if (accepted)
 		{
-			var poop:String = Highscore.formatSong(songs[curSelected].songName.toLowerCase(),
-				CoolUtil.difficultyArray.indexOf(existingDifficulties[curSelected][curDifficulty]));
+			var poop:String = CoolUtil.formatSong(curDifficulty);
 
 			PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
 			PlayState.isStoryMode = false;
 			PlayState.storyDifficulty = curDifficulty;
 
 			PlayState.storyWeek = songs[curSelected].week;
-			trace('CUR WEEK' + PlayState.storyWeek);
 
 			if (FlxG.sound.music != null)
 				FlxG.sound.music.stop();
@@ -271,20 +269,26 @@ class FreeplayState extends MusicBeatState
 
 	function changeDiff(change:Int = 0)
 	{
-		curDifficulty += change;
-		if (lastDifficulty != null && change != 0)
-			while (existingDifficulties[curSelected][curDifficulty] == lastDifficulty)
-				curDifficulty += change;
+		curDifficulty = FlxMath.wrap(curDifficulty + change, 0, CoolUtil.difficultyArray.length - 1);
 
-		if (curDifficulty < 0)
-			curDifficulty = existingDifficulties[curSelected].length - 1;
-		if (curDifficulty > existingDifficulties[curSelected].length - 1)
-			curDifficulty = 0;
-
+		#if !switch
 		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);
+		#end
 
-		diffText.text = '< ' + existingDifficulties[curSelected][curDifficulty] + ' >';
-		lastDifficulty = existingDifficulties[curSelected][curDifficulty];
+		updateDiff();
+	}
+
+	function updateDiff()
+	{
+		diffText.text = switch (CoolUtil.difficultyArray[curDifficulty].length)
+		{
+			case 0:
+				'';
+			case 1:
+				CoolUtil.difficultyArray[0];
+			case _:
+				'< ' + CoolUtil.difficultyArray[curDifficulty] + ' >';
+		}
 	}
 
 	function changeSelection(change:Int = 0)

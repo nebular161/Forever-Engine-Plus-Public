@@ -1461,7 +1461,7 @@ class PlayState extends MusicBeatState
 		Conductor.changeBPM(songData.bpm);
 
 		// String that contains the mode defined here so it isn't necessary to call changePresence for each mode
-		songDetails = CoolUtil.dashToSpace(SONG.song) + ' - ' + CoolUtil.difficultyFromNumber(storyDifficulty);
+		songDetails = CoolUtil.dashToSpace(SONG.song) + ' - ' + CoolUtil.formatSong(PlayState.storyDifficulty);
 
 		// String for when the game is paused
 		detailsPausedText = "Paused - " + songDetails;
@@ -1741,13 +1741,15 @@ class PlayState extends MusicBeatState
 
 	private function callDefaultSongEnd()
 	{
-		var difficulty:String = '-' + CoolUtil.difficultyFromNumber(storyDifficulty).toLowerCase();
+		var formatSong = CoolUtil.formatSong(PlayState.storyDifficulty);
+		
+		var difficulty:String = '-' + CoolUtil.formatSong(PlayState.storyDifficulty);
 		difficulty = difficulty.replace('-normal', '');
 
 		FlxTransitionableState.skipNextTransIn = true;
 		FlxTransitionableState.skipNextTransOut = true;
 
-		PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]);
+		PlayState.SONG = Song.loadFromJson(formatSong, PlayState.storyPlaylist[0]);
 		ForeverTools.killMusic([songMusic, vocals]);
 
 		// deliberately did not use the main.switchstate as to not unload the assets
